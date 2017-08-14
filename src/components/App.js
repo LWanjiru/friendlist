@@ -5,7 +5,7 @@ import DocumentList from './DocumentList.js'
 import { FetchDocuments } from '../actions/DocumentActions';
 @connect((Store)  => {
     // console.log('ins store',Store.documents);
-    console.log('is store', Store.reducer);
+
   return {
     documents: Store.reducer
   }

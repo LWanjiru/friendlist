@@ -4,12 +4,12 @@ import Document from './Document.js';
 
 export default class DocumentList extends React.Component{
   render(){
-    console.log(this.props);
-    // if(Object.getOwnPropertyNames(this.props.documents).length === 0){
-    //   return (<div></div>)
-    // }
+    console.log('this is what it says is unndefined', this.props.documents);
+    if(Object.getOwnPropertyNames(this.props.documents).length === 0){
+      return (<div></div>)
+    }
     let documentNodes = this.props.documents.map(function(document){
-      console.log(this.props.documents);
+      // console.log(this.props.documents);
       return (
         <Document title={document.title} content={document.content}
         key={document.id}>

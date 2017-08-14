@@ -9,4 +9,4 @@ import reducer from './reducers/DocumentReducer';
 
 const middleware = applyMiddleware(promise(), thunk, createLogger());
 
-export default createStore(reducer, middleware, window.__REDUX_DEVTOOLS_EXTENSION__());
+export default createStore(reducer, middleware);
