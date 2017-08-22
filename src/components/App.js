@@ -1,29 +1,14 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import DocumentList from './DocumentList.js'
+import React from 'react';
+import SignUpContainer from './signUpPage/SignUpContainer';
+// import LoginContainer from './loginPage/LoginContainer';
+// import HomePageContainer from './homePage/HomePageContainer';
 
-import { FetchDocuments } from '../actions/DocumentActions';
-@connect((Store)  => {
-    // console.log('ins store',Store.documents);
 
-  return {
-    documents: Store.reducer
-  }
-})
+const App = () => (
+  <div>
+    <SignUpContainer />
+    {/* <LoginContainer /> */}
+  </div>
+);
 
-export default class App extends Component {
-
-  componentWillMount() {
-    this.props.dispatch(FetchDocuments());
-  }
-
-  render() {
-    // console.log(this.props.documents);
-    return (
-      <div>
-        <h1>Hello, world.</h1>
-        <DocumentList documents ={this.props.documents} />
-      </div>
-    );
-  }
-}
+export default App;

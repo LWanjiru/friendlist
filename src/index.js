@@ -1,10 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import configureStore from './redux/store/configureStore';
 import App from './components/App';
-import Store from './Store';
+// import LoginContainer from './components/loginPage/LoginContainer';
 
-ReactDOM.render(
-<Provider store={Store}>
-  <App />
-</Provider>, document.getElementById('root'));
+const store = configureStore();
+
+render(
+  <BrowserRouter>
+    <Provider store={store}>
+      <Route path="/" component={App} />
+    </Provider>
+  </BrowserRouter>, document.getElementById('root'));
